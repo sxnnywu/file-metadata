@@ -8,7 +8,7 @@ app.use(cors());
 
 // multer middleware
 const multer = require('multer');
-const upload = multer({ dest: '/api/fileanalyse' });
+const upload = multer({ dest: 'uploads/' });
 
 // api route
 app.post('/api/fileanalyse', upload.single('upfile'), (req, res) => {
