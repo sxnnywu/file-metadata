@@ -10,7 +10,14 @@ app.use(cors());
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
-// api route
+// api routes
+
+// root endpoint
+app.get('/', (req, res) => {
+  res.sendFile(this.path.join(__dirname, 'index.html'));
+});
+
+// file metadata endpoint
 app.post('/api/fileanalyse', upload.single('upfile'), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: 'No file uploaded' });
