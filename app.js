@@ -11,10 +11,11 @@ const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
 // api routes
+const path = require('path');
 
 // root endpoint
 app.get('/', (req, res) => {
-  res.sendFile(this.path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // file metadata endpoint
